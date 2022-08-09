@@ -2,11 +2,12 @@
 Работа с базой данных и Python
 # Установка и запуск
 1. Вам нужно клонировать данный репозиторий\
-`git clone https://github.com/18BD/Data-Engineer-test-task.git`\
+`git clone https://github.com/18BD/Data-Engineer-test-task.git`
 2. После клонирования проекта вам также необходимо установить зависимости с помощью команды pip install -r requirements.txt из корневой папки проекта\
 `pip install -r requirements.txt`
 3. Для запуска откройте командную строку в корневой папке проекта и выполните следующую команду\
-`python test_tasks.py`
+`python test_tasks.py`\
+(Для корректной работы скрипта нужно подключиться к своей базе MongoDB в функции connect_mongo())
 # Функции
 - create_dataframe()
 ```python
@@ -76,6 +77,7 @@ def connect_mongodb(dataframe, collection_name):
                                "Datetime": row[5], 
                                "TimeToEnter": row[6]})
 ```
+(В переменной cluster изменить ссылку для подключения к базе данных на свою)\
 Данная функция принимает два параметра и через библиотеку pymongo создаёт новую коллекцию с названием параметра collection_name и записывает туда тот основной DataFrame полученный из параметра dataframe\
 ![alt text](https://i.imgur.com/jEmXNJT.png)
 - between_18_and_21()
